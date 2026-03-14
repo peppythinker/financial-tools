@@ -1,0 +1,176 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f7fb;
+  color: #222;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+.card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  color: #666;
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.field input,
+.field select {
+  padding: 12px 14px;
+  font-size: 1rem;
+  border: 1px solid #d6dbe6;
+  border-radius: 10px;
+  outline: none;
+  background: #fff;
+}
+
+.field input:focus,
+.field select:focus {
+  border-color: #7a9cff;
+}
+
+.actions {
+  margin-top: 24px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+button {
+  padding: 12px 18px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+}
+
+button:hover {
+  opacity: 0.92;
+}
+
+.primary {
+  background: #2f6fed;
+  color: #fff;
+}
+
+.secondary {
+  background: #e9edf7;
+  color: #222;
+}
+
+.results {
+  margin-top: 28px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.result-box {
+  background: #f8faff;
+  border: 1px solid #dde6fb;
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.result-label {
+  font-size: 0.95rem;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.result-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  word-break: break-word;
+}
+
+.breakdown {
+  margin-top: 28px;
+  background: #fafafa;
+  border: 1px solid #e6e6e6;
+  border-radius: 14px;
+  padding: 20px;
+}
+
+.breakdown h2 {
+  margin-top: 0;
+  font-size: 1.2rem;
+}
+
+.breakdown-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 10px 0;
+  border-bottom: 1px solid #ececec;
+}
+
+.breakdown-row:last-child {
+  border-bottom: none;
+}
+
+.total-row {
+  font-weight: 700;
+}
+
+@media (max-width: 700px) {
+  .grid,
+  .results {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    margin: 20px auto;
+    padding: 14px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  h1 {
+    font-size: 1.7rem;
+  }
+
+  .result-value {
+    font-size: 1.35rem;
+  }
+}
