@@ -1,7 +1,14 @@
 import json
 from pathlib import Path
 
-from sales_tax_calculator import TaxRateStore, calculate_total, parse_rates, sync_rates
+from sales_tax_calculator import (
+    TaxRate,
+    TaxRateStore,
+    calculate_total,
+    parse_rates,
+    render_sales_tax_page,
+    sync_rates,
+)
 
 
 def test_parse_rates_valid_payload():
@@ -45,3 +52,13 @@ def test_calculate_total():
 
     assert tax == 8.25
     assert total == 108.25
+
+
+def test_render_sales_tax_page_contains_sections():
+    rendered = render_sales_tax_page([TaxRate(city="new york", state="NY", rate=0.08875)])
+
+    assert "Sales Tax Calculator" in rendered
+    assert "Sync Rates" in rendered
+    assert "Calculate" in rendered
+    assert "New York, NY: 8.88%" in rendered
+    assert "Back to tool index" in rendered
