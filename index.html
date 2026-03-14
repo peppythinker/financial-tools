@@ -1,1 +1,34 @@
 
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Financial Tools Portal</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem auto; max-width: 900px; padding: 0 1rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+    .card { border: 1px solid #ddd; border-radius: 8px; padding: 1rem; }
+    a.button { display: inline-block; padding: 0.5rem 0.9rem; background: #0d6efd; color: #fff; text-decoration: none; border-radius: 6px; }
+    .muted { color: #666; }
+  </style>
+</head>
+<body>
+  <h1>Financial Tools</h1>
+  <p class="muted">Simple index page to access current and future tools.</p>
+
+  <div class="grid">
+    <section class="card">
+      <h2>Sales Tax Calculator</h2>
+      <p>Sync city tax rates from JSON and calculate totals.</p>
+      <a class="button" href="/sales-tax">Open Tool</a>
+    </section>
+
+    <section class="card">
+      <h2>More tools coming</h2>
+      <p>Use this portal as the hub for upcoming financial calculators.</p>
+      <p class="muted">Add a new card + route when a new tool is created.</p>
+    </section>
+  </div>
+</body>
+</html>
