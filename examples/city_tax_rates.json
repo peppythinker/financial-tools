@@ -1,5 +1,0 @@
-[
-  {"city": "New York", "state": "NY", "rate": 0.08875, "updated_at": "2026-01-01"},
-  {"city": "San Francisco", "state": "CA", "rate": 0.08625, "updated_at": "2026-01-01"},
-  {"city": "Chicago", "state": "IL", "rate": 0.1025, "updated_at": "2026-01-01"}
-]
