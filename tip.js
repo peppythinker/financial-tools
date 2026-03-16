@@ -41,13 +41,14 @@ function calculateTip() {
 
   const tipAmount = billAmount * (tipPercent / 100);
   const totalBill = billAmount + tipAmount;
-  const perPerson = totalBill / peopleCount;
-  const billPerPerson = billAmount / peopleCount;
+  const billSplitPerPerson = billAmount / peopleCount;
+  const tipSplitPerPerson = tipAmount / peopleCount;
+  const totalPerPerson = billSplitPerPerson + tipSplitPerPerson;
 
-  setText("tipAmountResult", formatCurrency(tipAmount));
-  setText("totalBillResult", formatCurrency(totalBill));
-  setText("perPersonResult", formatCurrency(perPerson));
-  setText("billPerPersonResult", formatCurrency(billPerPerson));
+  setText("billSplitResult", formatCurrency(billSplitPerPerson));
+  setText("tipSplitResult", formatCurrency(tipSplitPerPerson));
+  setText("totalPerPersonResult", formatCurrency(totalPerPerson));
+  setText("groupTotalResult", formatCurrency(totalBill));
 
   setValidationMessage("");
 }
