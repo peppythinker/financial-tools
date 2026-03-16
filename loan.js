@@ -56,16 +56,16 @@ function getMonthsToPayoff(principal, monthlyRate, basePayment, extraPayment) {
 function calculateLoan() {
   const loanAmount = getNumber("loanAmount");
   const annualRate = getNumber("interestRate");
-  const termYears = getNumber("loanTermYears");
+  const termMonths = getNumber("loanTermMonths");
   const extraPayment = getNumber("extraPayment");
 
-  if (loanAmount <= 0 || annualRate < 0 || termYears <= 0 || extraPayment < 0) {
+  if (loanAmount <= 0 || annualRate < 0 || termMonths <= 0 || extraPayment < 0) {
     setValidationMessage("Please enter valid values. Amount/term must be greater than 0; rates and extra payment cannot be negative.");
     return;
   }
 
   const monthlyRate = annualRate / 100 / 12;
-  const months = termYears * 12;
+  const months = termMonths;
 
   let monthlyPayment;
   if (monthlyRate === 0) {
@@ -90,7 +90,7 @@ function resetForm() {
   const defaults = {
     loanAmount: 25000,
     interestRate: 7.25,
-    loanTermYears: 5,
+    loanTermMonths: 60,
     extraPayment: 0
   };
 
