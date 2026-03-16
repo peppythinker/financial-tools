@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <title>Investment Calculator</title>
+  <meta
+    name="description"
+    content="Estimate investment growth with starting amount, monthly contribution, expected return, and time horizon."
+  />
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/calculator.css">
+</head>
+<body>
+  <main class="page-wrap">
+    <section class="hero">
+      <h1>Investment Calculator</h1>
+      <p>Project your portfolio growth based on regular investing and expected annual return.</p>
+    </section>
+
+    <div id="validationMessage" class="validation-message" role="alert" aria-live="assertive" hidden></div>
+
+    <section class="calculator-layout">
+      <div class="panel form-panel">
+        <form id="investmentForm" novalidate>
+          <div class="form-grid">
+            <div class="field">
+              <label for="initialInvestment">Initial Investment</label>
+              <input type="number" id="initialInvestment" value="10000" min="0" step="100" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="monthlyContribution">Monthly Contribution</label>
+              <input type="number" id="monthlyContribution" value="500" min="0" step="10" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="annualReturn">Expected Annual Return (%)</label>
+              <input type="number" id="annualReturn" value="7" min="0" step="0.01" inputmode="decimal" />
+            </div>
+
+            <div class="field">
+              <label for="years">Investment Horizon (Years)</label>
+              <input type="number" id="years" value="20" min="1" step="1" inputmode="numeric" />
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button class="btn btn-primary" type="submit">Calculate</button>
+            <button class="btn btn-secondary" id="resetBtn" type="button">Reset</button>
+          </div>
+        </form>
+      </div>
+
+      <aside class="panel results-panel" aria-live="polite">
+        <div class="main-result-card">
+          <div class="result-kicker">Estimated Portfolio Value</div>
+          <div class="main-result" id="futureValueResult">$0.00</div>
+        </div>
+
+        <div class="stats-grid">
+          <div class="stat-card">
+            <span class="stat-label">Total Contributions</span>
+            <span class="stat-value" id="contributionsResult">$0.00</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-label">Estimated Investment Gain</span>
+            <span class="stat-value" id="gainResult">$0.00</span>
+          </div>
+
+          <div class="stat-card">
+            <span class="stat-label">Average Annual Growth</span>
+            <span class="stat-value" id="annualGrowthResult">$0.00</span>
+          </div>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="investment.js"></script>
+</body>
+</html>
